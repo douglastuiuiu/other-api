@@ -1,12 +1,20 @@
 package com.example.rabbitmq.bean;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.validation.constraints.NotEmpty;
 import java.io.Serializable;
 
+@Entity
 public class Produto implements Serializable {
 
+    @Id
     private String codigo;
+    @NotEmpty
     private String nome;
+    @NotEmpty
     private String categoria;
+    @NotEmpty
     private String fabricante;
 
 
