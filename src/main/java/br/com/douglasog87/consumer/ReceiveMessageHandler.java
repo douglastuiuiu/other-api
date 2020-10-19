@@ -1,19 +1,20 @@
-package com.example.rabbitmq.consumer;
+package br.com.douglasog87.consumer;
 
-import com.example.rabbitmq.bean.Produto;
-import com.example.rabbitmq.repository.ProdutoRepository;
+import br.com.douglasog87.model.Product;
+import br.com.douglasog87.repository.ProductRepository;
+
 import org.springframework.stereotype.Service;
 
 @Service
 public class ReceiveMessageHandler {
 
-    private final ProdutoRepository repository;
+    private ProductRepository repository;
 
-    public ReceiveMessageHandler(ProdutoRepository repository) {
+    public ReceiveMessageHandler(ProductRepository repository) {
         this.repository = repository;
     }
 
-    public void handleMessage(Produto produto) {
+    public void handleMessage(Product produto) {
         System.out.println("Produto recebido com sucesso:");
         System.out.println(produto.toString());
         repository.save(produto);

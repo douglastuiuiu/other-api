@@ -1,6 +1,7 @@
-package com.example.rabbitmq.config;
+package br.com.douglasog87.config;
 
-import com.example.rabbitmq.consumer.ReceiveMessageHandler;
+import br.com.douglasog87.consumer.ReceiveMessageHandler;
+
 import org.springframework.amqp.core.Binding;
 import org.springframework.amqp.core.BindingBuilder;
 import org.springframework.amqp.core.Queue;
@@ -12,7 +13,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
-public class ConfigureRabbitMq {
+public class RabbitConfig {
 
     public static final String EXCHANGE_NAME = "testexchange";
     public static final String QUEUE_NAME = "testqueue";
