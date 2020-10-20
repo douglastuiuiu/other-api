@@ -22,8 +22,5 @@ colors.scheme.xml
 git.xml
 stack.yml
 transaction-logs/*
-
-#src/main/resources/application-dev\.properties
-#src/main/resources/application-dev.properties
-#application-dev.properties
-#application-dev\.properties
+/.idea/
+/.settings/
