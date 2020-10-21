@@ -26,7 +26,7 @@ public class RabbitConfig {
 
     @Getter
     @Value("#{productsApiConsumerConfig.getEventTopicName()}")
-    private String productsEventTopic;
+    private String productsApiEventTopic;
 
     @Getter
     @Value("${product.event.config.queue-name:product.event.otherapi}")
@@ -78,38 +78,38 @@ public class RabbitConfig {
     @Bean
     Declarables productEvents() {
 
-        Exchange productTopic = ExchangeBuilder.topicExchange(productsEventTopic).durable(true).build();
+        Exchange productTopic = ExchangeBuilder.topicExchange(productsApiEventTopic).durable(true).build();
 
         Queue productQueue = QueueBuilder
                 .durable(productEventQueue)
                 .withArguments(
                         Map.of(
-                                "x-dead-letter-exchange", productsEventTopic,
-                                "x-dead-letter-routing-key" ,productEventRoutingErrorKey
+                                "x-dead-letter-exchange", productsApiEventTopic,
+                                "x-dead-letter-routing-key", productEventRoutingErrorKey
                         )
                 ).build();
 
         Queue productErrorQueue = QueueBuilder
                 .durable(productEventErrorQueue)
-                .withArguments( Map.of("x-queue-mode", "lazy") )
+                .withArguments(Map.of("x-queue-mode", "lazy"))
                 .build();
 
         Binding productUpdateBinding = BindingBuilder
-                .bind( productQueue )
-                .to( productTopic )
-                .with( productEventRoutingUpdateKey )
+                .bind(productQueue)
+                .to(productTopic)
+                .with(productEventRoutingUpdateKey)
                 .noargs();
 
         Binding productDeleteBinding = BindingBuilder
-                .bind( productQueue )
-                .to( productTopic )
-                .with( productEventRoutingDeleteKey )
+                .bind(productQueue)
+                .to(productTopic)
+                .with(productEventRoutingDeleteKey)
                 .noargs();
 
         Binding productErrorBinding = BindingBuilder
-                .bind( productErrorQueue )
-                .to( productTopic )
-                .with( productEventRoutingErrorKey )
+                .bind(productErrorQueue)
+                .to(productTopic)
+                .with(productEventRoutingErrorKey)
                 .noargs();
 
         return new Declarables(
