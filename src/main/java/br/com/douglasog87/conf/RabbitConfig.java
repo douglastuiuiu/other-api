@@ -1,6 +1,6 @@
 package br.com.douglasog87.conf;
 
-import br.com.douglasog87.event.consumer.ConsumerConfig;
+import br.com.douglasog87.event.consumer.ProductsApiConsumerConfig;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
@@ -20,7 +20,7 @@ import org.springframework.context.annotation.Import;
 
 import java.util.Map;
 
-@Import({ConsumerConfig.class})
+@Import({ProductsApiConsumerConfig.class})
 @Configuration
 public class RabbitConfig {
 
