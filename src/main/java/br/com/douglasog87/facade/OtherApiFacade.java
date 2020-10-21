@@ -1,8 +1,8 @@
-package br.com.douglasog87.otherapi.facade;
+package br.com.douglasog87.facade;
 
-import br.com.douglasog87.commonsevent.event.DomainEvent;
-import br.com.douglasog87.products.event.domain.Product;
-import br.com.douglasog87.products.event.strategy.ProductEvent;
+import br.com.douglasog87.event.DomainEvent;
+import br.com.douglasog87.event.domain.Product;
+import br.com.douglasog87.event.strategy.ProductEvent;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
