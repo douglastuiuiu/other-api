@@ -1,4 +1,4 @@
-package br.com.douglasog87.conf;
+package br.com.douglasog87.other.conf;
 
 import org.springframework.context.MessageSource;
 import org.springframework.context.annotation.Bean;

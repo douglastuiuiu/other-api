@@ -1,4 +1,4 @@
-package br.com.douglasog87.controller;
+package br.com.douglasog87.other.controller;
 
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -1,6 +1,6 @@
-package br.com.douglasog87.conf;
+package br.com.douglasog87.other.conf;
 
-import br.com.douglasog87.event.consumer.ProductsApiConsumerConfig;
+import br.com.douglasog87.products.event.consumer.ProductsApiConsumerConfig;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
